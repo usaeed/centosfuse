@@ -1,0 +1,77 @@
+Error checking TLS connection: No IP address found 4: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 08:00:27:9a:84:72 brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::a00:27ff:fe9a:8472/64 scope link
+       valid_lft forever preferred_lft forever
+
+
+
+
+                        ##         .
+                  ## ## ##        ==
+               ## ## ## ## ##    ===
+           /"""""""""""""""""\___/ ===
+      ~~~ {~~ ~~~~ ~~~ ~~~~ ~~~ ~ /  ===- ~~~
+           \______ o           __/
+             \    \         __/
+              \____\_______/
+
+Error getting IP address: No IP address found 4: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 08:00:27:9a:84:72 brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::a00:27ff:fe9a:8472/64 scope link
+       valid_lft forever preferred_lft forever
+docker is configured to use the default machine with IP
+For help getting started, check out the docs at https://docs.docker.com
+
+
+GRB-RDG1WIN7F36+UsmaanS@GRB-RDG1WIN7F36 MINGW64 ~ (master)
+$ docker images
+An error occurred trying to connect: Get http://127.0.0.1:2375/v1.22/images/json: dial tcp 127.0.0.1:2375: connectex: No connection could be made because the target machine actively refused it.
+
+GRB-RDG1WIN7F36+UsmaanS@GRB-RDG1WIN7F36 MINGW64 ~ (master)
+$ boot2docker restart
+bash: boot2docker: command not found
+
+GRB-RDG1WIN7F36+UsmaanS@GRB-RDG1WIN7F36 MINGW64 ~ (master)
+$ doc
+docker              docker-compose.exe  docx2txt
+docker.exe          docker-machine.exe  docx2txt.pl
+
+GRB-RDG1WIN7F36+UsmaanS@GRB-RDG1WIN7F36 MINGW64 ~ (master)
+$ docker-machine stop default
+Stopping "default"...
+Machine "default" was stopped.
+
+GRB-RDG1WIN7F36+UsmaanS@GRB-RDG1WIN7F36 MINGW64 ~ (master)
+$ docker-machine start default
+Starting "default"...
+(default) Check network to re-create if needed...
+(default) Waiting for an IP...
+Machine "default" was started.
+Waiting for SSH to be available...
+Detecting the provisioner...
+Started machines may have new IP addresses. You may need to re-run the `docker-machine env` command.
+
+GRB-RDG1WIN7F36+UsmaanS@GRB-RDG1WIN7F36 MINGW64 ~ (master)
+$ docker-machine env
+export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST="tcp://192.168.99.100:2376"
+export DOCKER_CERT_PATH="C:\Users\UsmaanS\.docker\machine\machines\default"
+export DOCKER_MACHINE_NAME="default"
+# Run this command to configure your shell:
+# eval $("C:\Program Files\Docker Toolbox\docker-machine.exe" env)
+
+GRB-RDG1WIN7F36+UsmaanS@GRB-RDG1WIN7F36 MINGW64 ~ (master)
+$ docker images
+An error occurred trying to connect: Get http://127.0.0.1:2375/v1.22/images/json: dial tcp 127.0.0.1:2375: connectex: No connection could be made because the target machine actively refused it.
+
+GRB-RDG1WIN7F36+UsmaanS@GRB-RDG1WIN7F36 MINGW64 ~ (master)
+$ eval $("C:\Program Files\Docker Toolbox\docker-machine.exe" env)
+
+GRB-RDG1WIN7F36+UsmaanS@GRB-RDG1WIN7F36 MINGW64 ~ (master)
+$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+centosfusebase      latest              54b68e4b265f        About an hour ago   2.104 GB
+centos              centos6.6           881cca81e67f        3 months ago        202.6 MB
+
+GRB-RDG1WIN7F36+UsmaanS@GRB-RDG1WIN7F36 MINGW64 ~ (master)
+$

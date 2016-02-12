@@ -1,0 +1,50 @@
+docker command cheet sheet
+
+#!/bin/bash
+# Delete all containers
+docker rm -f $(docker ps -a -q)
+# Delete all images
+docker rmi -f $(docker images -q)
+
+yum install java-1.7.0-openjdk-devel
+
+yum install unzip 
+
+unzip jboss-fuse-full-6.2.0.redhat-133.zip
+
+git clone https://usman.saeed@stash.ipttools.info/scm/ssb/jbossfuse.git
+
+RUN sed -i 's/fuse/appcontainer/g' /opt/fuse/jboss-fuse-6.2.0.redhat-133/etc/system.properties
+
+fabric:create --clean -r manualip -g manualip --manual-ip 172.17.0.3
+fabric:join --profile default --resolver manualip --manual-ip 172.17.0.2 --zookeeper-password admin 172.17.0.3:2181 ssqam01
+
+AMQ pensive_heisenberg 172.17.0.2
+FABRIC high_ramanujan 172.17.0.3
+
+MAVEN DOCKER
+
+echo 'export M2_HOME=/usr/local/maven' > /etc/profile.d/maven.sh
+echo 'export PATH=${M2_HOME}/bin:${PATH}' >> /etc/profile.d/maven.sh
+echo 'export PATH=${M2_HOME}:${PATH}' >> /etc/profile.d/maven.sh
+
+Docker setup
+
+docker run -i -t -d -p 9191:8181 centosbasefuse/start /bin/bash
+docker run -i -t -d centosbasefuse:AMQ /bin/bash
+docker run -i -t -d centosbasefuse:ssb /bin/bash
+
+docker ps | grep ssb | awk '{print $12}'
+docker ps | grep AMQ | awk '{print $12}'
+docker ps | grep fuse | awk '{print $12}'
+
+Run build local in docker 
+
+mvn clean install -Dmaven.test.skip=true -Dmaven.site.skip=true -Dmaven.javadoc.skip=true
+
+Setup Environment
+fabric:create --clean -r manualip -g manualip --manual-ip 172.17.0.2
+fabric:join --profile default --resolver manualip --manual-ip 172.17.0.3 --zookeeper-password admin 172.17.0.2:2181 appcontainer
+
+
+
