@@ -1,5 +1,3 @@
-# centosfuse readme file
-
 # Cleaning existing image
 
 # Delete all containers
@@ -10,5 +8,5 @@ docker rmi -f $(docker images -q)
 # Pre-requisite 
 Copy jboss-fuse-full-6.2.0.redhat-133.zip to C:\docker\resources in your windows 7 laptop
 
-# Add the below line in Dockerfile "copy distribution from C:\docker\resources to /tmp directory in your docker base image
+# Add the below line in Dockerfile
 COPY \resources /tmp
