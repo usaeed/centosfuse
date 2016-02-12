@@ -9,7 +9,7 @@ docker rmi -f $(docker images -q)
 Copy jboss-fuse-full-6.2.0.redhat-133.zip to C:\docker\resources in your windows 7 laptop
 
 # Clone this repo to c:\docker\ in your windows 7 laptop
-git clone URL
+git clone https://github.com/usaeed/centosfuse.git
 cd c:\docker\centosfuse
 
 # Run Docker Quick Start Terminal 
